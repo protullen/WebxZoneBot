@@ -18,14 +18,18 @@ webxzonebot = Client(
 async def forward(bot, message):
     try:
         await bot.copy_message(
-            chat_id = chat_id,
-            from_chat_id = from_chat_id,
-            caption = f'**{message.caption}**',
-            message_id = message.id,
-            parde_mode = enums.ParseMode.MARKDOWN            
+            chat_id=chat_id,
+            from_chat_id=from_chat_id,
+            caption=f'**{message.caption}**',
+            message_id=message.id,
+            parse_mode=enums.ParseMode.MARKDOWN            
         )
     except Exception as e:
         print(f'{e}')
+
+@webxzonebot.on_message(filters.command('start') & filters.user(5163706369))
+async def start(bot, message):
+    await message.reply('Alive')
 
 print('Bot Started!')
 webxzonebot.run()
