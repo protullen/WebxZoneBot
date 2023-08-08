@@ -4,8 +4,8 @@ from os import environ
 api_id = environ.get('API_ID')
 api_hash = environ.get('API_HASH')
 bot_token = environ.get('BOT_TOKEN')
-chat_id = environ.get('TO_CHAT')
-from_chat_id = environ.get('FROM_CHAT')
+chat_id = int(environ.get('TO_CHAT'))
+from_chat_id = int(environ.get('FROM_CHAT'))
 
 webxzonebot = Client(    
     name='webxzonebot',
