@@ -20,7 +20,7 @@ async def forward(bot, message):
         await bot.copy_message(
             chat_id = chat_id,
             from_chat_id = from_chat_id,
-            caption = message.caption,
+            caption = f'**{message.caption}**',
             message_id = message.id,
             parde_mode = enums.ParseMode.MARKDOWN            
         )
